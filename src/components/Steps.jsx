@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import StepMessage from "./StepMessage";
 
 export default function Steps({ message }) {
   const [step, setStep] = useState(1);
@@ -26,7 +27,11 @@ export default function Steps({ message }) {
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
 
-          <p className="message">{message[step - 1]}</p>
+          <StepMessage step={step}>
+            {message[step - 1]}
+            {/* bed practice: */}
+            <span dangerouslySetInnerHTML={{ __html: `&#12852${step};` }} />
+          </StepMessage>
 
           <div className="buttons">
             <Button bgColor="#3a2a6d" textColor="#fff" onClick={handleBackStep}>

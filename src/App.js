@@ -1,6 +1,10 @@
 import Steps from "./components/Steps";
 
-const message = ["step 1", "step 2", "step 3"];
+const message = [
+  "This is the first step",
+  "This is the second step",
+  "This is the third step",
+];
 
 export default function App() {
   return (
